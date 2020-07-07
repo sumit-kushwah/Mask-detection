@@ -1,0 +1,22 @@
+Face mask detection model
+
+A web/android app user interface for app
+A database to collect images
+
+features:
+1.Identify person if they are wearing or not wearing masks
+2.if person is identified then according to database information notify them
+3.if person is unidentified then categorize as unidentified and collect those images and make public                
+  to identify.
+4.statistics of users activity and report making
+5.working with images
+6.working with video
+7.working with real time camera
+8.make an api
+9.documentation of this project
+
+
+Try to do also:
+connect with real camera
+
+
