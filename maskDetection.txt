@@ -20,3 +20,4 @@ Try to do also:
 connect with real camera
 
 
+/Users/sumitkushwah/Desktop/maskDetection/ui/mask.jpeg
