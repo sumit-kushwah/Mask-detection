@@ -5,10 +5,14 @@ import sys
 sys.path.insert(0, '../face_mask_detector')
 import detect_mask_video
 import detect_mask_image
+import webbrowser
 
 def runImage():
     path = entry1.get()
     detect_mask_image.runImage(path)
+
+def callback():
+    webbrowser.open_new("https://github.com/sumit-kushwah/Mask-detection")
 
 root = tk.Tk()
 root.title("Face Mask Detection")
@@ -64,9 +68,13 @@ imageButton.pack(side=tk.TOP, expand=True)
 videoButton.pack(side=tk.TOP, expand=True)
 quitbutton.pack(side=tk.TOP, expand=True)
 
-madeby = tk.Label(footer, text="Made by Sumit, Mukesh and Gaurav",font=('times', 18, 'italic')).pack(side=tk.BOTTOM)
+madeby = tk.Label(footer, text="Made by Sumit, Mukesh and Gaurav",font=('times', 18, 'italic'), fg="blue", cursor="hand2")
+madeby.pack(side=tk.BOTTOM)
+madeby.bind("<Button-1>", lambda e : callback())
+
 header.pack()
 content.pack();
 footer.pack();
+
 
 root.mainloop()
