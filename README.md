@@ -6,5 +6,5 @@ Face mask  detection using tensorflow and opencv
 2. Navigate to directory
 3. run `python3 ui/main.py`</pre>
 
-###Application Look :
+#### Application Look :
 ![Screenshot](https://github.com/sumit-kushwah/Mask-detection/blob/master/screenshot.png)
