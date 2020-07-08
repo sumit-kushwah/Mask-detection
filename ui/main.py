@@ -14,6 +14,9 @@ def runImage():
 def callback():
     webbrowser.open_new("https://github.com/sumit-kushwah/Mask-detection")
 
+def clear_entry(event, entry):
+    entry.delete(0, tk.END)
+
 root = tk.Tk()
 root.title("Face Mask Detection")
 root.geometry("400x600")
@@ -40,6 +43,7 @@ detail = tk.Label(content, text='Detect mask using any image and real time camer
 
 entry1 = tk.Entry (content) 
 entry1.insert(0, 'enter image path here ...')
+entry1.bind("<Button-1>", lambda event: clear_entry(event, entry1))
 entry1.pack()
 
 imageButton = tk.Button(content,
