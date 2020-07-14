@@ -1,5 +1,6 @@
-./face_mask_detector/examples
-./face_mask_detector/dataset
-./face_mask_detector/imutils/demo_images
-./face_mask_detector/imutils/docs
-./face_mask_detector/plot.png
+face_mask_detector/examples
+face_mask_detector/dataset
+face_mask_detector/imutils/demo_images
+face_mask_detector/imutils/docs
+face_mask_detector/plot.png
+ui/non_mask_images

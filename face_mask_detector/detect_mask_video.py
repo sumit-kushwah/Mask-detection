@@ -12,8 +12,10 @@ import cv2
 import os
 import sys
 sys.path.insert(0, '../face_mask_detector/imutils')
+sys.path.insert(0, '../helpers/')
 from imutils.video import VideoStream
 import imutils
+import frameSaver
 
 def detect_and_predict_mask(frame, faceNet, maskNet):
 	# grab the dimensions of the frame and then construct a blob
@@ -89,6 +91,7 @@ ap.add_argument("-c", "--confidence", type=float, default=0.5,
 args = vars(ap.parse_args())
 
 def runvideo():
+	notSaved = True
 	# load our serialized face detector model from disk
 	print("[INFO] loading face detector model...")
 	prototxtPath = os.path.sep.join([args["face"], "deploy.prototxt"])
@@ -127,6 +130,11 @@ def runvideo():
 			# the bounding box and text
 			label = "Mask" if mask > withoutMask else "No Mask"
 			color = (0, 255, 0) if label == "Mask" else (0, 0, 255)
+
+			# save image
+			if (notSaved):
+				frameSaver.save(label, frame)
+				notSaved = False
 
 			# include the probability in the label
 			label = "{}: {:.2f}%".format(label, max(mask, withoutMask) * 100)
