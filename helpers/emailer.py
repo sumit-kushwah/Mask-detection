@@ -1,18 +1,24 @@
 import yagmail
-import json
 
-receiver = "17mi540@nith.ac.in"
-body = "This is sumit kushwah"
 
-data = {}
+def sendMailToNonMaskPerson(receiverMail, subject, body, attachments='foo'):
 
-with open('students.json') as json_file:
-    data = json.load(json_file)
+    yag = yagmail.SMTP("sumitkushwah1729@gmail.com")
+    if (attachments != 'foo'):
+        yag.send(
+            to=receiverMail,
+            subject=subject,
+            contents=body,
+            attachments=attachments
+        )
+    else:
+        yag.send(
+            to=receiverMail,
+            subject=subject,
+            contents=body
+        )
 
-yag = yagmail.SMTP(data["first"]["email"])
-yag.send(
-    to=receiver,
-    subject="Yagmail test with attachment",
-    contents=body, 
-    attachments='../../ui/mask2.jpg'
-)
+
+# example
+# sendMailToNonMaskPerson("17mi540@nith.ac.in", "this is sample email",
+#                         "This is my second email from yagmail", '../ui/non_mask_images/1594724132.jpg')
