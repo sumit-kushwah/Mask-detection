@@ -46,8 +46,7 @@ def saveStudentInfo(name, rollno, face_encoding, email, phone):
     mycursor = mydb.cursor()
     face_pickled_data = pickle.dumps(face_encoding)
     sql = "INSERT INTO known_students (name, rollno, face_encoding, email, phone) VALUES (%s, %s, %s , %s, %s)"
-    val = ("sumit kushwah", "40", face_pickled_data,
-           "sumitkushwah1729@gmail.com", "9129629168")
+    val = (name, rollno, face_encoding, email, phone)
     mycursor.execute(sql, val)
     mydb.commit()
 
