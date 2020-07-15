@@ -132,6 +132,8 @@ def runvideo():
 			color = (0, 255, 0) if label == "Mask" else (0, 0, 255)
 
 			# save image
+			# There can be multiple condition to extract images 
+			# here i just extracted first image of non-mask image when camera starts
 			if (notSaved):
 				frameSaver.save(label, frame)
 				notSaved = False
