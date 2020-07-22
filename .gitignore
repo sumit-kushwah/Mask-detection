@@ -4,3 +4,4 @@ face_mask_detector/imutils/demo_images
 face_mask_detector/imutils/docs
 face_mask_detector/plot.png
 ui/non_mask_images
+ui/known_images

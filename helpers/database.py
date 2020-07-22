@@ -46,7 +46,7 @@ def saveStudentInfo(name, rollno, face_encoding, email, phone):
     mycursor = mydb.cursor()
     face_pickled_data = pickle.dumps(face_encoding)
     sql = "INSERT INTO known_students (name, rollno, face_encoding, email, phone) VALUES (%s, %s, %s , %s, %s)"
-    val = (name, rollno, face_encoding, email, phone)
+    val = (name, rollno, face_pickled_data, email, phone)
     mycursor.execute(sql, val)
     mydb.commit()
 
@@ -93,8 +93,3 @@ def retrieveStudentFromRollNo(rollno):
         })
 
     return student
-
-
-
-
-
