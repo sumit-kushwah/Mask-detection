@@ -1,3 +1,2 @@
-1.clone this project
-2.tensorflow | pip3 install tensorflow
-3.opencv | pip3 install opencv-python
+tensorflow
+opencv-python
